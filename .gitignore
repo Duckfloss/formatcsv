@@ -1,7 +1,6 @@
 
-
-data
-settings
+# Ruby stuff
+*.gem
 
 #OSX
 .DS_Store
