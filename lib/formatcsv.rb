@@ -1,15 +1,19 @@
-class FormatCSV
+require 'formatcsv/cli'
 
-	def initialize
-		# I dunno do some stuff
 
+
+module FormatCSV
+
+	class Write
+		def initialize
+			puts "It works!"
+		
+		end
+
+		def doit
+			puts "It works!"
+		end
 	end
-
-	def write
-		puts "It works@"
-	
-	end
-
 
 
 
