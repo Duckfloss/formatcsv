@@ -1,24 +1,13 @@
-require 'formatcsv/cli'
-
+#require 'formatcsv/cli'
+require 'pry'
 
 
 module FormatCSV
 
 	class Write
-		def initialize
-			puts "It works!"
-		
-		end
-
-		def doit
-			puts "It works!"
+		def now
+#binding.pry
+			"It works"
 		end
 	end
-
-
-
-
-
-
-
 end

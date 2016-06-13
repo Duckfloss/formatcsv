@@ -1,9 +1,14 @@
 require 'minitest/autorun'
-require 'formatcsv'
+require './lib/formatcsv'
+require 'pry'
 
 class FormatCSVTest < Minitest::Test
+	def setup
+		@write = FormatCSV::Write.new
+	end
 	def test_this
-		assert_equal "It works!",
-			FormatCSV::Write.new
+#binding.pry
+		assert_equal "It works",
+			@write.now
 	end
 end

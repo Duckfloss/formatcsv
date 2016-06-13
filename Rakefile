@@ -1,5 +1,8 @@
-task default: %w[test]
+require 'pry'
+
+task :default => [:test]
 
 task :test do
-	ruby "test/test_formatcsv.rb"
+	ruby "./test/test_formatcsv.rb"
 end
+
