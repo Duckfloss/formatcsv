@@ -24,17 +24,17 @@ class Shopifile
 
   def sanitize(head,field)
     case head
-      when :pf_id then return [@data[field.to_sym]]
-      when :handle then return [@data[field.to_sym].gsub(" ","_")]
-      when :title then return [@data[field.to_sym]]
-      when :body then return [body_filter(@data[field.to_sym])]
-      when :option1_name then return [@data[field.to_sym]]
-      when :option2_name then return [@data[field.to_sym]]
-      when :option1_value then return [@data[field.to_sym]]
-      when :option2_value then return [@data[field.to_sym]]
-      when :variant_sku then return [@data[field.to_sym]]
-      when :variant_inventory_qty then return [@data[field.to_sym]]
-      when :variant_price then return [@data[field.to_sym]]
+      when :pf_id then return @data[field]
+      when :handle then return @data[field].gsub(" ","_")
+      when :title then return @data[field]
+      when :body then return body_filter(@data[field])
+      when :option1_name then return @data[field]
+      when :option2_name then return @data[field]
+      when :option1_value then return @data[field]
+      when :option2_value then return @data[field]
+      when :variant_sku then return @data[field]
+      when :variant_inventory_qty then return @data[field]
+      when :variant_price then return @data[field]
     end
   end
 
