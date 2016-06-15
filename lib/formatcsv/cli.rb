@@ -11,15 +11,18 @@ module FormatCSV
 			options = OpenStruct.new
 			options.file = nil
 			options.source = nil
+			options.data = nil
 			options.target = nil
 			options.verbose = false
 
 			parse_options = OptionParser.new do |opt|
-				opt.banner = "Usage: formatcsv [options]"
+				opt.banner = "Usage: formatcsv FILE [options]"
 				opt.separator ""
 				opt.separator "Options:"
 
 				opt.on('-s', '--source SOURCE', 'Specify the source type: \'uu\' or \'rpro\'') { |source| options.source = source }
+
+				opt.on('-d', '--data DATA', 'Specify the data type: \'products\' or \'variants\'') { |data| options.data = data }
 
 				opt.on('-t', '--target TARGET', 'Specify the target type: \'shopify\', \'google\', or \'dynalog\'') { |target| options.target = target }
 
