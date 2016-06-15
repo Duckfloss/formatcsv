@@ -1,0 +1,36 @@
+uniteu_products:
+  pf_id: pf_id
+  handle: name
+  title: name
+  body: description
+  option1 name: attr_label1
+  option2 name: attr_label2
+
+uniteu_variants:
+  pf_id: pf_id
+  option1 value: attr_value1
+  option2 value: attr_value2
+  variant sku: sku
+  variant inventory qty: inventory_level
+  variant price: price_level1
+
+shopify:
+  handle
+  title
+  body
+  vendor
+  type
+  tags
+  published
+  option1 name
+  option1 value
+  option2 name
+  option2 value
+  option3 name
+  option3 value
+  variant sku
+  variant inventory qty
+  variant price
+  variant barcode
+  image src
+  image alt text
