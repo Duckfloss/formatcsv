@@ -3,16 +3,16 @@ uniteu_products:
   handle: name
   title: name
   body: description
-  option1 name: attr_label1
-  option2 name: attr_label2
+  option1_name: attr_label1
+  option2_name: attr_label2
 
 uniteu_variants:
   pf_id: pf_id
-  option1 value: attr_value1
-  option2 value: attr_value2
-  variant sku: sku
-  variant inventory qty: inventory_level
-  variant price: price_level1
+  option1_value: attr_value1
+  option2_value: attr_value2
+  variant_sku: sku
+  variant_inventory qty: inventory_level
+  variant_price: price_level1
 
 shopify:
   handle
@@ -29,6 +29,7 @@ shopify:
   option3 name
   option3 value
   variant sku
+  variant inventory tracker
   variant inventory qty
   variant price
   variant barcode
