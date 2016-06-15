@@ -1,37 +1,49 @@
+require 'yaml'
+
 class Shopifile
 
-  attr_accessor :data
+  attr_accessor :data, :source, :type, :product
 
-  SHOPIFY = [
-    "handle",
-    "title",
-    "body",
-    "vendor",
-    "type",
-    "tags",
-    "published",
-    "option1 name",
-    "option1 value",
-    "option2 name",
-    "option2 value",
-    "option3 name",
-    "option3 value",
-    "variant sku",
-    "variant inventory qty"
-    "variant price",
-    "variant barcode",
-    "image src",
-    "image alt text"
-  ]
-
-  def initialize
-    @data = Hash.new
+  def initialize(datarow, source="uniteu", type="products")
+    @data = datarow
+    @source = source
+    @type = type
+    @product = {}
   end
-  
-  def product
-    SHOPIFY.each do |head|
-      @data[head] = nil
+
+
+  def process
+    datamap = YAML.load(File.open("./lib/formatcsv/map.yml"))["#{source}_#{type}"]
+    datamap.each do |head,field|
+      @product[head] = sanitize(head.to_sym,field.to_sym)
     end
+    @product
+  end
+
+  private
+
+  def sanitize(head,field)
+    case head
+      when :pf_id then return [@data[field.to_sym]]
+      when :handle then return [@data[field.to_sym].gsub(" ","_")]
+      when :title then return [@data[field.to_sym]]
+      when :body then return [body_filter(@data[field.to_sym])]
+      when :option1_name then return [@data[field.to_sym]]
+      when :option2_name then return [@data[field.to_sym]]
+      when :option1_value then return [@data[field.to_sym]]
+      when :option2_value then return [@data[field.to_sym]]
+      when :variant_sku then return [@data[field.to_sym]]
+      when :variant_inventory_qty then return [@data[field.to_sym]]
+      when :variant_price then return [@data[field.to_sym]]
+    end
+  end
+
+  def body_filter(data)
+    data
+  end
+
+  def vendor_filter(data)
+    vendors = YAML.load(File.open("./lib/formatcsv/vendors.yml"))
   end
 
 
