@@ -2,32 +2,39 @@
 require 'pry'
 require 'yaml'
 require 'csv'
+require './lib/formatcsv/shopifile.rb'
 
 module FormatCSV
 
-	class From
+  class From
 
-		VENDORS = YAML.load(File.open("./formatcsv/vendors.yml"))
+    attr_reader :source_file, :destination_file, :products
 
-		def initialize(source_file)
-			@source_file = CSV.read(source_file, :headers=>true,:header_converters=>:symbol)
-			@destination_file = "#{File.dirname(file)}/#{File.basename(file,'.csv')}_toShopify.csv"
-		end
+    def initialize(file)
+      @source_file = CSV.read(file, :headers=>true,:header_converters=>:symbol)
+      i = 0
+      while File.exist?("#{File.dirname(file)}/Shopify_export#{i}.csv") == true
+        i += 1
+      end
+      @destination_file = File.open("#{File.dirname(file)}/Shopify_export#{i}.csv","w")
+      @products = []
+    end
 
-		def Uniteu
-			
-		end
+    def inspect
+    end
 
-		def Rpro
+    def uniteu
+      @source_file.each do |row|
+        @products << Shopifile.new(row).process
+      end
+      @products
+    end
 
-		end
+    def rpro
 
-	end
+    end
 
-	class Write
-		def now
-#binding.pry
-			"It works"
-		end
-	end
+  end
+
+
 end

@@ -17,7 +17,7 @@ class Shopifile
     datamap.each do |head,field|
       @product[head] = sanitize(head.to_sym,field.to_sym)
     end
-    @product
+    return @product
   end
 
   private
