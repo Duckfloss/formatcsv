@@ -1,6 +1,7 @@
 
 # Ruby stuff
 *.gem
+cliop.rb
 
 #OSX
 .DS_Store

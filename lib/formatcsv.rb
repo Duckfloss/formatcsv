@@ -6,7 +6,7 @@ require './lib/formatcsv/shopifile.rb'
 
 module FormatCSV
 
-  class From
+  class Formatter
 
     attr_reader :source_file, :destination_file, :products
 
