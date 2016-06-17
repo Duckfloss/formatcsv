@@ -92,6 +92,7 @@ module FormatCSV
           end
         end
       end
+      @options
     end
 
     
