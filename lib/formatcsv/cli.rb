@@ -1,4 +1,9 @@
-require 'formatcsv'
+require 'yaml'
+require 'csv'
+require './lib/formatcsv'
+require './lib/formatcsv/shopifile'
+require './lib/formatcsv/uniteu.rb'
+
 
 module FormatCSV
 	class CLI
@@ -6,13 +11,20 @@ module FormatCSV
   attr_reader :options
 
 		def self.run(args)
-			@options = Hash.new
-			@options[:sourcefile] = nil
-			@options[:targetfile] = nil
-			@options[:source] = nil
-			@options[:data] = "p"
-			@options[:format] = "shopify"
-			@options[:verbose] = false
+      @options = parse(args)
+      $x = UniteU.new(@options)
+    end
+
+    private
+
+    def self.parse(args)
+    	options = Hash.new
+			options[:sourcefile] = nil
+			options[:targetfile] = nil
+			options[:source] = nil
+			options[:data] = "p"
+			options[:format] = "shopify"
+			options[:verbose] = false
 
       # Iterate through command options destructively
       while args.length > 0
@@ -22,7 +34,7 @@ module FormatCSV
           exit 0
         # if -v, mark verbose
         elsif i = args.index { |a| a =~ /^-v/ }
-          @options[:verbose] = true
+          options[:verbose] = true
           args.delete_at(i)
           next
         # if -s, check source selector
@@ -40,7 +52,7 @@ module FormatCSV
             puts "Example: 'formatcsv <sourcefile> -su' if it's from UniteU"
             exit -1
           end
-          @options[:source] = source
+          options[:source] = source
           next
         # if -d, check data selector
         elsif i = args.index { |a| a =~ /^-d/ }
@@ -57,13 +69,13 @@ module FormatCSV
             puts "Example: 'formatcsv <sourcefile> -dp' if it's products"
             exit -1
           end
-          @options[:data] = data
+          options[:data] = data
           next
         # if -f, check for format
         elsif i = args.index { |a| a =~ /^-f/ }
           args.delete_at(i)
-          @options[:format] = args.delete_at(i)
-          if !["shopify","dynalog","google"].include? @options[:format].downcase
+          options[:format] = args.delete_at(i)
+          if !["shopify","dynalog","google"].include? options[:format].downcase
             puts "Please indicate how to format: Shopify, Dynalog, or Google Merchant"
             puts "Example: 'formatcsv <sourcefile> -f shopify'"
             exit -1
@@ -73,17 +85,17 @@ module FormatCSV
           file = args.shift
           if File.extname(file) == ".csv"
             if File.exist?(file)
-              if @options[:sourcefile].nil?
-                @options[:sourcefile] = file
+              if options[:sourcefile].nil?
+                options[:sourcefile] = file
               else
-                @options[:targetfile] = file
+                options[:targetfile] = file
               end
             else
-              if @options[:sourcefile].nil?
+              if options[:sourcefile].nil?
                 puts "The file #{file} doesn't exist."
                 exit -1
               else
-                @options[:targetfile] = file
+                options[:targetfile] = file
               end
             end
           else
@@ -92,9 +104,8 @@ module FormatCSV
           end
         end
       end
-      @options
+      return options
     end
-
     
     def self.print_help
       puts "\n"
