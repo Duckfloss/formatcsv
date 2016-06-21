@@ -9,7 +9,7 @@ module FormatCSV
   end
 
   class Formatter
-    attr_reader :source_file, :target_file, :verbose, :source, :data, :format, :products, :merge
+    attr_reader :source_file, :target_file, :verbose, :source, :data_type, :format, :products, :merge
 
     def initialize(options)
       @source_file = CSV.read(options[:source_file],"r",:headers=>true,:header_converters=>:symbol)
@@ -21,10 +21,10 @@ module FormatCSV
       @products = []
 
       @source = options[:source]
-      @data = options[:data]
+      @data_type = options[:data_type]
       @format = options[:format]
       @verbose = options[:verbose]
-      @mapper = Mapper.new({:source=>@source, :data=>@data, :format=>@format})
+      @mapper = Mapper.new({:source=>@source, :data_type=>@data_type, :format=>@format})
     end
 
     def inspect

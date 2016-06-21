@@ -1,5 +1,3 @@
-require 'yaml'
-
 class Shopifile
 
   attr_accessor :data, :source, :type, :product
@@ -7,7 +5,7 @@ class Shopifile
   def initialize(datarow, params)
     @data = datarow
     @source = params[:source]
-    @type = params[:type]
+    @data_type = params[:data_type]
     @product = {}
   end
 
@@ -44,6 +42,4 @@ class Shopifile
   def vendor_filter(data)
     vendors = YAML.load(File.open("./lib/formatcsv/vendors.yml"))
   end
-
-
 end

@@ -23,22 +23,28 @@ module FormatCSV
 			options[:source_file] = nil
 			options[:target_file] = nil
 			options[:source] = nil
-			options[:data] = "p"
+			options[:data_type] = "p"
 			options[:format] = "shopify"
 			options[:verbose] = false
 
       # Iterate through command options destructively
       while args.length > 0
-        # if -h, print help and exit
+
+        # if -h
+        # print help and exit
         if i = args.index { |a| a == "-h" }
           print_help
           exit 0
-        # if -v, mark verbose
+
+        # if -v
+        # mark verbose
         elsif i = args.index { |a| a =~ /^-v/ }
           options[:verbose] = true
           args.delete_at(i)
           next
-        # if -s, check source selector
+
+        # if -s
+        # check source selector
         elsif i = args.index { |a| a =~ /^-s/ }
           source = args.delete_at(i)
           # if selector is next char, save
@@ -55,24 +61,29 @@ module FormatCSV
           end
           options[:source] = source
           next
-        # if -d, check data selector
+
+        # if -d
+        # check data selector
         elsif i = args.index { |a| a =~ /^-d/ }
-          data = args.delete_at(i)
+          data_type = args.delete_at(i)
           # if selector is next char, save
-          if ["p","v"].include? data[2]
-            data = data[2]
+          if ["p","v"].include? data_type[2]
+            data_type = data_type[2]
           # if selector is next in array
           elsif ["p","v"].include? args[i+1]
-            data = args.delete_at[i+1]
+            data_type = args.delete_at[i+1]
           # if selector is not present, error and exit
           else
-            puts "Please indicate whether source data is (p)products or (v)variants"
+            puts "Please indicate whether source data type is (p)products or (v)variants"
+            puts "Please indicate whether source data type is (p)products or (v)variants"
             puts "Example: 'formatcsv <sourcefile> -dp' if it's products"
             exit -1
           end
-          options[:data] = data
+          options[:data_type] = data_type
           next
-        # if -f, check for format
+
+        # if -f
+        # check for format
         elsif i = args.index { |a| a =~ /^-f/ }
           args.delete_at(i)
           options[:format] = args.delete_at(i)
@@ -81,7 +92,9 @@ module FormatCSV
             puts "Example: 'formatcsv <sourcefile> -f shopify'"
             exit -1
           end
-        # if it's a filename, check for format and exists?
+
+        # if it's not a flag
+        # check if it's a csv and if it exists?
         else
           file = args.shift
           if File.extname(file) == ".csv"
