@@ -90,14 +90,14 @@ vendors:
   BLK: Black Diamond
   BLU: Bluewater Ropes
   BNJ: Benjamin International
-  BOB: Bobbo, Inc.
+  BOB: Bobbo Inc
   BOE: Boeri USA
   BOG: Bogs
   BRA: Brabo
   BRB: Brad Bruce
   BRC: Barrecrafters
   BRH: Bearhands
-  BRK: Brad Bruce DVDs
+  BRK: Brad Bruce
   BRN: Bern
   BRO: Broner
   BRP: Burpco
@@ -109,14 +109,14 @@ vendors:
   BSL: BSA-SW Michigan Scout Shop
   BTG: Boot Glove
   BTH: Bethlehem Lights
-  BU+: Bula/Sheridan
+  BU+: [Bula,Sheridan]
   BUC: Buck Knives
   BUL: Bula
   BUR: Burton
   BYR: Byer Of Maine
   BZB: Betsie Bay Kayaks
   C&M: C&M Inovations
-  C4 : Boardworks
+  C4:  Boardworks
   CAM: Camelbak
   CAR: Susan Carli Scarves
   CAS: [Cascade Designs, MSR, Therm-a-Rest, Platypus, SealLine, eCase, PackTowl]
@@ -156,7 +156,7 @@ vendors:
   CPT: Capital Garment
   CRC: Crocs
   CRE: Crescent
-  CRI: Crispi Sport Srl (alpina)
+  CRI: Crispi Sport
   CRL: Casa Relief International
   CRO: Croakies
   CRZ: Crazy Creek Products
@@ -175,14 +175,14 @@ vendors:
   DEL: De Lorme Map Co
   DEM: Demon
   DES: Descente
-  DFR: Jim Dufresne Books
+  DFR: Jim Dufresne
   DGM: Disc Golf Michigan
   DIS: Discraft Products
   DLB: Dalbello
   DMG: Dry My Gloves
-  DMT: Dmt/Diamond Mach Tchnlgy
+  DMT: DMT
   DOG: It's A Dog's Life
-  DOL: Dolfin-Jade
+  DOL: [Dolfin, Jade]
   DOR: Dorfman
   DPC: Dave Page Cobbler
   DSG: Disegna
@@ -193,7 +193,7 @@ vendors:
   DWN: Dawn Marketing
   DYN: Skis Dynastar
   EAG: Eagle Creek
-  EAR: Ear Band It/Jaco Entrprs
+  EAR: Ear Band-It
   EBA: EBay
   ECO: Echoes
   EDY: Eddyline
@@ -207,7 +207,7 @@ vendors:
   EMP: Empire Distribution
   EMS: Emsco Group
   ENE: Enertia Trail Foods
-  ENG: England/Fifty-50
+  ENG: [England,Fifty-50]
   ERG: Erg
   ERM: Sg Marketing
   ERS: E&R Sales
@@ -267,7 +267,7 @@ vendors:
   GRB: Grabber
   GRD: Ground
   GRE: Great Quotations
-  GRG: Gregory Mt Prodcts
+  GRG: Gregory Mountain Products
   GRL: Great Lakes Promotions
   GRP: Grip Master
   GRS: Grassroots Goods
@@ -287,7 +287,7 @@ vendors:
   HLH: Vazi-Helmet Headz
   HLI: Heliconia Press
   HLY: Helly Hansen
-  HMH: [Hammerhead,CherryMax]
+  HMH: [Hammerhead, CherryMax]
   HNS: Honey Stinger
   HOB: Hobie Cat
   HOC: Hot Chillys
@@ -329,12 +329,12 @@ vendors:
   JJJ: Judith Jansen Jewelry
   JKS: JK Sales
   JLD: J.L. Darling Corp
-  JNO: Johnson Outdoors/lendal
+  JNO: [Johnson Outdoors, Lendal]
   JOS: Joshua Tree Products
   JOY: Joy Sports
   JUN: Juniper Ridge
   JVA: Java Juice
-  K2 : K2
+  K2:  K2
   KAR: Karhu
   KAT: Katadyn
   KAV: Kavu
@@ -346,7 +346,7 @@ vendors:
   KIL: Killer Beads
   KIS: Kiss My Face
   KKL: Krimson Klover
-  KLY: Klymit/Argon Tech., Inc.
+  KLY: Klymit
   KLZ: Klutz
   KNC: Kalamazoo Nature Center
   KNE: KneeBinding
@@ -376,7 +376,7 @@ vendors:
   LMN: Leatherman
   LND: Laundromat
   LNE: Line
-  LOG: Log House Designs, Inc.
+  LOG: Log House Designs
   LOL: Lolë
   LOW: Lowe Alpine Systems
   LQD: Liquid Boardwear
@@ -400,7 +400,7 @@ vendors:
   MHR: Marhar
   MHW: Mountain Hardwear
   MIL: Miller Thermometer
-  MIN: Ministry/Community
+  MIN: Ministry with Community
   MIS: Mission Imports
   MIT: Mitchell Paddles
   MJF: Mary Jane's Farm
@@ -420,7 +420,7 @@ vendors:
   MPI: MPI Outdoors
   MRO: Monroe Art Studio
   MRW: Morrow Snowboards
-  MSC: Misc/Sale
+  MSC: Misc
   MSF: Mountain Surf
   MSR: MSR
   MTH: Mountain House
@@ -481,42 +481,42 @@ vendors:
   OSP: Osprey
   OTP: Outpost Sports
   OTS: Outside Magazine
-  OTT: Otter Products, LLC
+  OTT: OtterBox
   OTW: Outerwear Repair
   OUG: Outdoor Gear
-  OUP: Outdoor Products/Recreation
+  OUP: Outdoor Products
   OUR: Outdoor Research
   OZO: [Ozone Kites, Windzup]
   P&B: P&B Harness Shop
   P&H: P&H
   PAD: Paddleboy Carts
-  PAI: Produce Apparel, Inc.
+  PAI: Produce Apparel Inc
   PAR: Partners West Book Dist
   PAT: Patagonia
-  PAU: Paulsen, Mark
-  PBI: Pickleball, Inc.
+  PAU: Mark Paulsen
+  PBI: Pickleball Inc
   PDR: Powder Mag
   PEA: Peapack Mitten Company
   PEN: Pendleton
   PER: Perception
   PLA: Plastech Industries Co
   PLN: Planet Zoo
-  PLS: Pro-Lite Sports LLC
+  PLS: Pro-Lite Sports
   PMS: Prime Memory Solutions
   PMX: [Polarmax, Longworth]
   POC: Poc
-  POL: Polar Electro, Inc.
+  POL: Polar Electro Inc
   POW: Powerfood
-  PRA: prAna
+  PRA: Prana
   PRB: Probar LLC
   PRD: Predator
   PRK: Park Designs
   PRL: Pearl Izumi
-  PRO: Product Architects, Inc.
+  PRO: Product Architects Inc
   PRP: Preeminent Projects
   PRR: Purr-fection By MJC
   PRS: Paris
-  PRT: Partners Book Dist.
+  PRT: Partners Book Distribution
   PSC: Packaging Service Company
   PSF: Primal Spirit Foods
   PSO: Psolar.EX
@@ -526,7 +526,7 @@ vendors:
   PTF: Patagonia
   PTS: Port Supply
   PTZ: Petzl
-  PUR: Puremichigan - Helm, Inc.
+  PUR: PureMichigan - Helm Inc
   PUT: Putori
   PUZ: Puzzles That Rock
   PWG: Pow Gloves
@@ -543,22 +543,22 @@ vendors:
   RAT: Rat-Tail Distribution
   RCK: Rock Our World
   RCO: Re Chaco
-  RDI: Rainbow Distributing, Inc.
+  RDI: Rainbow Distributing
   RDL: Red Ledge
   RED: Red Corp
-  REF: Reef Brazil World Hq
+  REF: Reef
   REL: Reliable Racing
   RHR: Rita Hadro Rusco
   RIP: Ripzone
-  RIS: Rising International, Inc.
-  RKY: Rocky Mt Resole, Inc.
+  RIS: Rising International
+  RKY: Rocky Mountain Resole
   RLB: Rollerblade
   RLK: Rope Lok
-  RLZ: Railz/Sport Tech
-  RNS: Rain and Snow, Inc.
-  ROC: Roces USA, Inc.
+  RLZ: [Railz, Sport Tech]
+  RNS: Rain and Snow Inc
+  ROC: Roces USA
   ROD: Rodale Press
-  ROM: Rome Industries, Inc.
+  ROM: Rome Industries
   ROS: Rossingnol
   ROY: Royal Robbins
   RTG: Radical Gear
@@ -573,17 +573,17 @@ vendors:
   SAA: Sports Accessories/America
   SAF: Sunday Afternoons
   SAL: Salomon
-  SAR: Saranac Glove Co
-  SCC: Sweetwood Cattle Co.
+  SAR: Saranac
+  SCC: Sweetwood Cattle Company
   SCN: Sportsman's Connection
   SCO: Scott
   SCP: Scarpa
   SCR: Screamer Hats
-  SDC: Schrader-Dane Corp.
+  SDC: Schrader-Dane Corp
   SEA: Seattle Sports
   SEE: See Ya Sports
   SEI: Seismic Wheels
-  SEN: Tribe/Senate
+  SEN: [Tribe, Senate]
   SEP: Sharp End Publishing
   SFT: Swift
   SFW: Spyder
@@ -607,13 +607,13 @@ vendors:
   SMA: SmartWool
   SMT: Summit Distribution
   SNA: Snap Dragon Design
-  SND: Sunshine Distribution, Inc.
+  SND: Sunshine Distribution
   SNO: Snoloha
   SNP: Snow Peak
   SNS: Snowstamps
   SNW: Snow Angel
   SOE: Souers
-  SOF: M.J. Soffe Co
+  SOF: Soffe
   SOG: Sog Specialty Knives
   SOL: Sole
   SON: Sonic Sports
@@ -631,21 +631,21 @@ vendors:
   SPT: Sportula
   SPY: Spyder
   SRZ: Surf-Rodz
-  SSL: Sports Specialists, Ltd
+  SSL: Sports Specialists Ltd
   SSP: Suspender Company
   SSS: Sale Misc Venders
   STA: State Theater
-  STE: Steiner-Burris Co, Inc.
-  STN: Sterns, Inc.
+  STE: [Steiner, Burris]
+  STN: Stearns
   STO: Ski Tops
   STP: Steripen
   STQ: Stohlquist
   STR: Stormy Kromer
-  STS: Stormy Seas, Inc.
+  STS: Stormy Seas
   STW: Skating The Way
   SUN: Sun Co
-  SUS: Salus Marine Wear, Inc.
-  SUU: Suunto/Opimus Stove
+  SUS: Salus Marine Wear
+  SUU: [Suunto,Optimus]
   SV2: Seven Two
   SVT: Sun Valley Ski Tool
   SWI: Victorinox Swiss Army
@@ -654,12 +654,12 @@ vendors:
   SWX: Swix
   TAR: Hammock Source
   TB2: Timbuk2
-  TBN: T-Bone Productions Intl
+  TBN: T-Bone Productions
   TDK: Trendkillers
   TEC: [Tecnica, Blizzard]
   TER: Terramar Indust
   TEV: Teva
-  TEZ: Teazer, Inc.
+  TEZ: Teazer Inc
   TGO: Trango
   THL: Thule
   THO: Thorlo
@@ -673,29 +673,29 @@ vendors:
   TOP: Top Cor LLC
   TPK: Transpack
   TRL: National Geographic Maps
-  TRR: Terra Studios, Inc.
+  TRR: Terra Studios Inc
   TSU: Tsunami/Gemini
   TSV: The Sweater Venture
   TUB: Tubbs
-  TUC: Tucker-Jones House, Inc.
+  TUC: Tucker-Jones House Inc
   TUR: Turtlefur
   TWS: Twist Knitwear
-  TYR: Tyr Sport, Inc.
+  TYR: TYR
   UA : Under Armour
   ULU: Ulu
   UMP: University of Michigan Press
   USD: [U.S. Divers, Aqua Lung]
   UTM: Ultima Health Products
   UV : UV Distributors
-  UVX: Uvex/Holmenkol
+  UVX: [Uvex, Holmenkol]
   VAN: Vans
-  VAU: Vaude Sports, Inc.
+  VAU: Vaude Sports
   VIB: Five Fingers
   VID: Video Action Sports
   VKL: Völkl
   VOI: Voile' Equipment
   VOL: Volcom
-  VOY: Voyager/Mad River
+  VOY: [Voyager, Mad River]
   VOZ: Voz Sports
   VSQ: [Vasque, Red Wing]
   WAN: Wanderer Imports Co
@@ -703,14 +703,14 @@ vendors:
   WDS: Woodstock Percussion
   WER: Werner
   WEZ: Walk-EZ
-  WFB: World Footbag, Inc.
+  WFB: World Footbag
   WGL: Water Girl
   WGN: Wigens
   WHL: Wildhills Adventures
   WIE: Wiebke Trading Co
   WIG: Wigwam Mills
   WIN: Wenonah
-  WIS: Wisconsin Pharmacal Co.
+  WIS: Wisconsin Pharmacal Co
   WLB: Wooly Bully Wear
   WLK: Walk For The Homeless
   WM : William Mark
