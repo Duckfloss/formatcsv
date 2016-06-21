@@ -4,10 +4,10 @@ class Shopifile
 
   attr_accessor :data, :source, :type, :product
 
-  def initialize(datarow, source="uniteu", type="products")
+  def initialize(datarow, params)
     @data = datarow
-    @source = source
-    @type = type
+    @source = params[:source]
+    @type = params[:type]
     @product = {}
   end
 
