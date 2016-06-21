@@ -2,7 +2,7 @@ require 'yaml'
 require 'csv'
 require './lib/formatcsv'
 require './lib/formatcsv/shopifile'
-require './lib/formatcsv/uniteu.rb'
+require './lib/formatcsv/uniteu'
 
 
 module FormatCSV
@@ -12,15 +12,15 @@ module FormatCSV
 
 		def self.run(args)
       @options = parse(args)
-      $x = UniteU.new(@options)
+      FormatCSV.run(@options)
     end
 
     private
 
     def self.parse(args)
     	options = Hash.new
-			options[:sourcefile] = nil
-			options[:targetfile] = nil
+			options[:source_file] = nil
+			options[:target_file] = nil
 			options[:source] = nil
 			options[:data] = "p"
 			options[:format] = "shopify"
@@ -85,17 +85,17 @@ module FormatCSV
           file = args.shift
           if File.extname(file) == ".csv"
             if File.exist?(file)
-              if options[:sourcefile].nil?
-                options[:sourcefile] = file
+              if options[:source_file].nil?
+                options[:source_file] = file
               else
-                options[:targetfile] = file
+                options[:target_file] = file
               end
             else
-              if options[:sourcefile].nil?
+              if options[:source_file].nil?
                 puts "The file #{file} doesn't exist."
                 exit -1
               else
-                options[:targetfile] = file
+                options[:target_file] = file
               end
             end
           else

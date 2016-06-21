@@ -1,13 +1,21 @@
 module FormatCSV
 
+  def self.run(options)
+    if options[:source] == "u"
+      $x = UniteU.new(options).parse
+    elsif options[:source] == "r"
+      $x = "RPro.new(options)"
+    end
+  end
+
   class Formatter
-    attr_reader :source_file, :target_file, :verbose, :source, :data, :format, :products
+    attr_reader :source_file, :target_file, :verbose, :source, :data, :format, :products, :merge
 
     def initialize(options)
-      @source_file = CSV.read(options[:sourcefile],"r",:headers=>true,:header_converters=>:symbol)
+      @source_file = CSV.read(options[:source_file],"r",:headers=>true,:header_converters=>:symbol)
 
       # Get target file
-      @target_file = get_target_file({:source_file => options[:sourcefile], :target_file => options[:targetfile]})
+      @target_file = get_target_file({:source_file => options[:source_file], :target_file => options[:target_file]})
 
       # init empty products array
       @products = []
