@@ -3,6 +3,7 @@ require 'csv'
 require './lib/formatcsv'
 require './lib/formatcsv/shopifile'
 require './lib/formatcsv/uniteu'
+require './lib/formatcsv/map/mapper'
 
 
 module FormatCSV

@@ -1,13 +1,18 @@
 class UniteU < FormatCSV::Formatter
 
   def parse
+
     case @format.downcase
       when "shopify"
         @source_file.each do |row|
           @products << Shopifile.new(row, {:source=>"uniteu", :type=>"products"}).process
         end
-#        if @merge == true
-          
+binding.pry
+        if @merge == true
+          merge(@products)
+        else
+          write(@products)
+        end
       when "dynalog"
         @products = 'Dynalogger.new(row, {:source=>"uniteu", :type=>"products"}).process'
       when "google"
@@ -20,7 +25,7 @@ class UniteU < FormatCSV::Formatter
 
   private
 
-  def write
+  def write(products)
     
   end
 

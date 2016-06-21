@@ -13,7 +13,6 @@ class Shopifile
 
 
   def process
-    datamap = YAML.load(File.open("./lib/formatcsv/map.yml"))["#{source}_#{type}"]
     datamap.each do |head,field|
       @product[head] = sanitize(head.to_sym,field.to_sym)
     end

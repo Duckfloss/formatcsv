@@ -24,6 +24,7 @@ module FormatCSV
       @data = options[:data]
       @format = options[:format]
       @verbose = options[:verbose]
+      @mapper = Mapper.new({:source=>@source, :data=>@data, :format=>@format})
     end
 
     def inspect

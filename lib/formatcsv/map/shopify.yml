@@ -14,7 +14,7 @@ uniteu_variants:
   variant_inventory qty: inventory_level
   variant_price: price_level1
 
-shopify:
+headers:
   handle
   title
   body
