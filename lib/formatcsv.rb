@@ -45,7 +45,7 @@ module FormatCSV
         if File.exist?(target_file)
           # mark @merge true and open existing file
           @merge = true
-          target_file = CSV.open(target_file, "r+")
+          target_file = CSV.open(target_file, "r+", {:headers=>:first_row})
         else
           # otherwise mark @merge false and create new file
           @merge = false
