@@ -15,6 +15,7 @@ uniteu_variants:
   variant_price: price_level1
 
 headers:
+  pf_id
   handle
   title
   body
