@@ -8,9 +8,9 @@ class UniteU < FormatCSV::Formatter
           @products << Shopifile.new(row, {:source=>"uniteu", :data_type=>"products", :map=>@mapper.map}).process
         end
         if @merge == true
-          merge(@products)
+          merge_to_file(@products)
         else
-          write(@products)
+          write_to_file(@products)
         end
       when "dynalog"
         @products = 'Dynalogger.new(row, {:source=>"uniteu", :data_type=>"products"}).process'
@@ -24,7 +24,7 @@ class UniteU < FormatCSV::Formatter
 
   private
 
-  def write(products)
+  def write_to_file(products)
     @target_file << headers = @mapper.headers
     products.each do |product|
       row = []
@@ -36,7 +36,37 @@ class UniteU < FormatCSV::Formatter
     @target_file.close
   end
 
-  def merge(products)
-    
+  def merge_to_file(products)
+    headers = @mapper.headers
+    rows = Rows.new
+
+    @target_file.each do |row|
+      rows << row.to_hash
+    end
+
+    products.each do |product|
+      this_row = rows.by_id(product["pf_id"])
+      product.merge!(this_row) {|k,v1,v2| v2}
+      
+    end
+binding.pry
+
+  end
+
+
+end
+
+class Rows < Array
+  # Get appropriate row by its pf_id
+  def by_id(id)
+    hash = Hash.new
+
+    self.each do |row|
+      if row["pf_id"] == id
+        hash = row
+      end
+    end
+
+    return hash
   end
 end
