@@ -4,8 +4,10 @@ class Mapper
 
   def initialize(params)
     file = YAML.load(File.open("./lib/formatcsv/map/#{params[:format]}.yml"))
-    @map = file["#{params[:source]}_#{params[:data_type]}"]
-    @headers = file["headers"]
+    source = {"u"=>"uniteu", "r"=>"rpro"}
+    data_type = {"p"=>"products", "v"=>"variants"}
+    @map = file["#{source[params[:source]]}_#{data_type[params[:data_type]]}"]
+    @headers = file["headers"].split
   end
 
 end
