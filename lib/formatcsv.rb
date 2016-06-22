@@ -25,6 +25,7 @@ module FormatCSV
       @format = options[:format]
       @verbose = options[:verbose]
       @mapper = Mapper.new({:source=>@source, :data_type=>@data_type, :format=>@format})
+#binding.pry
     end
 
     def inspect
@@ -44,11 +45,11 @@ module FormatCSV
         if File.exist?(target_file)
           # mark @merge true and open existing file
           @merge = true
-          target_file = File.open(target_file, "r+")
+          target_file = CSV.open(target_file, "r+")
         else
           # otherwise mark @merge false and create new file
           @merge = false
-          target_file = File.new(target_file, "w")
+          target_file = CSV.open(target_file, "w")
         end
       else
         # if target_file is NOT specified
@@ -60,7 +61,7 @@ module FormatCSV
           i += 1
           target_file = "#{path}/#{File.basename(params[:source_file],'.csv')}#{i}.csv"
         end
-        target_file = File.new(target_file, "w")
+        target_file = CSV.open(target_file, "w")
       end
       return target_file
     end

@@ -6,12 +6,13 @@ class Shopifile
     @data = datarow
     @source = params[:source]
     @data_type = params[:data_type]
+    @map = params[:map]
     @product = {}
   end
 
 
   def process
-    datamap.each do |head,field|
+    @map.each do |head,field|
       @product[head] = sanitize(head.to_sym,field.to_sym)
     end
     return @product

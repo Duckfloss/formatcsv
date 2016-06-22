@@ -5,9 +5,8 @@ class UniteU < FormatCSV::Formatter
     case @format.downcase
       when "shopify"
         @source_file.each do |row|
-          @products << Shopifile.new(row, {:source=>"uniteu", :data_type=>"products"}).process
+          @products << Shopifile.new(row, {:source=>"uniteu", :data_type=>"products", :map=>@mapper.map}).process
         end
-binding.pry
         if @merge == true
           merge(@products)
         else
@@ -26,7 +25,15 @@ binding.pry
   private
 
   def write(products)
-    
+    @target_file << headers = @mapper.headers
+    products.each do |product|
+      row = []
+      headers.each do |header|
+        row << product[header]
+      end
+      @target_file << row
+    end
+    @target_file.close
   end
 
   def merge(products)
