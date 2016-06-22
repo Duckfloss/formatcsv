@@ -22,16 +22,16 @@ headers:
   type
   tags
   published
-  option1 name
-  option1 value
-  option2 name
-  option2 value
-  option3 name
-  option3 value
-  variant sku
-  variant inventory tracker
-  variant inventory qty
-  variant price
-  variant barcode
-  image src
-  image alt text
+  option1_name
+  option1_value
+  option2_name
+  option2_value
+  option3_name
+  option3_value
+  variant_sku
+  variant_inventory_tracker
+  variant_inventory_qty
+  variant_price
+  variant_barcode
+  image_src
+  image_alt_text
