@@ -12,7 +12,7 @@ module FormatCSV
     attr_reader :source_file, :target_file, :verbose, :source, :data_type, :format, :products, :merge
 
     def initialize(options)
-      @source_file = CSV.read(options[:source_file],"r",:headers=>true,:header_converters=>:symbol)
+      @source_file = CSV.read(encode(options[:source_file]),:headers=>true,:header_converters=>:symbol)
 
       # Get target file
       @target_file = get_target_file({:source_file => options[:source_file], :target_file => options[:target_file]})
@@ -25,7 +25,7 @@ module FormatCSV
       @format = options[:format]
       @verbose = options[:verbose]
       @mapper = Mapper.new({:source=>@source, :data_type=>@data_type, :format=>@format})
-#binding.pry
+binding.pry
     end
 
     def inspect
@@ -37,19 +37,19 @@ module FormatCSV
         # If it doesn't contain a directory
         if File.dirname(params[:target_file]) == "."
           # put it in source_file base directory
-          target_file = "#{File.dirname(File.absolute_path(params[:source_file]))}/#{params[:target_file]}"
+          target_file_name = "#{File.dirname(File.absolute_path(params[:source_file]))}/#{params[:target_file]}"
         else
-          target_file = File.absolute_path(params[:target_file])
+          target_file_name = File.absolute_path(params[:target_file])
         end
         # then check if the file exists
-        if File.exist?(target_file)
+        if File.exist?(target_file_name)
           # mark @merge true and open existing file
           @merge = true
-          target_file = CSV.open(target_file, "r+", {:headers=>:first_row, :write_headers=>true, :skip_blanks=>true})
+          target_file = CSV.read(encode(target_file_name), :headers=>:true, :write_headers=>true, :skip_blanks=>true)
         else
           # otherwise mark @merge false and create new file
           @merge = false
-          target_file = CSV.open(target_file, "w")
+          target_file = CSV.open(target_file_name, "w")
         end
       else
         # if target_file is NOT specified
@@ -65,6 +65,14 @@ module FormatCSV
       end
       return target_file
     end
-  end
 
+    def encode(file)
+      begin
+        encoded_file = File.open(file, "r", {:encoding => "UTF-8"})
+      rescue
+        encoded_file = File.open(file, "r", {:encoding => "Windows-1252:UTF-8"})
+      end
+      return encoded_file
+    end
+  end
 end
