@@ -40,21 +40,44 @@ class UniteU < FormatCSV::Formatter
     headers = @mapper.headers
     rows = Rows.new
 
-    @target_file.each do |row|
+    @target_data.each do |row|
       rows << row.to_hash
     end
 
+    file_name = File.absolute_path(@target_file.get_path)
+
+    @target_file << headers
+
     products.each do |product|
       this_row = rows.by_id(product["pf_id"])
-      product.merge!(this_row) {|k,v1,v2| v2}
-      
+      array = []
+      this_row.each do |k,v|
+        if k == "variant_inventory_tracker"
+          array << "shopify"
+        elsif k == "published"
+          array << "FALSE"
+        elsif product[k].nil?
+          array << v
+        else
+          array << product[k]
+        end
+      end
+      @target_file << array
     end
-binding.pry
 
+    if !@target_file.closed?
+      @target_file.close
+    end
+  end
+end
+
+class CSV
+  def get_path
+    return @io.path
   end
 
-
 end
+
 
 class Rows < Array
   # Get appropriate row by its pf_id
